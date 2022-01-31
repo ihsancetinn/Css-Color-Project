@@ -1,2 +1,2 @@
-# Css-Gradiant-Generator
+# Css-Color-Project
 Basic CSS Project
