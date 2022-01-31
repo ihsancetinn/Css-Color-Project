@@ -1,10 +1,20 @@
 const input1 = document.getElementById('input1');
 const input2 = document.getElementById('input2');
-const randomBtn = document.getElementById('random');
+const randomBtn = document.querySelector('.random');
 const body = document.querySelector("body");
 const message = document.getElementById('message');
-const hexcodes = [
-    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a",
+const mixcodes = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "a",
     "b",
     "c",
     "d",
@@ -31,16 +41,20 @@ randomBtn.addEventListener("click", function () {
 //Functions
 
 function updateColorMessage() {
-    message.innerHTML = `background:linear-gradient(90deg, ${input1.value}, ${input2.value})`;
+    message.innerHTML = `Background:(90deg, ${input1.value}, ${input2.value})`;
 }
+//Random Colors Functions
+
 
 function getRandomColor() {
     let randomColor = "#";
     while (randomColor.length < 7) {
-        randomColor + hexcodes[Math.floor(Math.random() * hexcodes.length)];
+        randomColor += mixcodes[Math.floor(Math.random() * mixcodes.length)];
     }
     return randomColor;
 }
+// console.log(getRandomColor());  Testing
+
 function applyRandomColor() {
     let randomColor = "";
     randomColor = getRandomColor();
@@ -48,12 +62,12 @@ function applyRandomColor() {
     let secondRandom = getRandomColor();
 
     body.style.background = `linear-gradient(90deg, ${firstRandom}, ${secondRandom})`;
-    console.log(firstRandom, secondRandom);
+    // console.log(firstRandom, secondRandom);
     input1.value = firstRandom;
     input2.value = secondRandom;
     updateColorMessage();
 }
 
-//Runing
+// RUN AT LOAD
 updateColorMessage();
 applyRandomColor();
