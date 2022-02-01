@@ -27,14 +27,14 @@ const mixcodes = [
 input1.addEventListener("input", function () {
     let firstColor = input1.value;
     let secondColor = input2.value;
-    body.style.background = `linear-gradient(90deg, ${firstColor}, ${secondColor})`;
+    body.style.background = `linear-gradient(90deg, ${firstColor}, ${input2.value})`;
     updateColorMessage();
 });
-// input2.addEventListener("input", function () {
-//     let secondColor = input2.value;
-//     body.style.background = `linear-gradient(90deg, ${input1.value}, ${secondColor})`;
-//     updateColorMessage();
-// });
+input2.addEventListener("input", function () {
+    let secondColor = input2.value;
+    body.style.background = `linear-gradient(90deg, ${input1.value}, ${secondColor})`;
+    updateColorMessage();
+});
 randomBtn.addEventListener("click", function () {
     applyRandomColor();
 });
