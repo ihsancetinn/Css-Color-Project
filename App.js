@@ -26,7 +26,6 @@ const mixcodes = [
 // Events
 input1.addEventListener("input", function () {
     let firstColor = input1.value;
-    let secondColor = input2.value;
     body.style.background = `linear-gradient(90deg, ${firstColor}, ${input2.value})`;
     updateColorMessage();
 });
